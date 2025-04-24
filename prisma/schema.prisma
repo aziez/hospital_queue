@@ -6,7 +6,9 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+    // output   = "../node_modules/@prisma-app/client"
+
+  // output   = "generated/prisma/client"
 }
 
 datasource db {
@@ -38,8 +40,8 @@ model QueueItem {
   ticketNumber String
   department  String
   patientId   String
-  patient     Patient   @relation(fields: [patientId], references: [id])
-  status      String    @default("waiting")
+  patient     Patient      @relation(fields: [patientId], references: [id])
+  status      QueueStatus    @default(WAITING)
   priority    Int       @default(0)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
@@ -55,4 +57,11 @@ model User {
   department  String?
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+}
+
+enum QueueStatus {
+  WAITING
+  PROCESSING
+  COMPLETED
+  HIDDEN
 }
