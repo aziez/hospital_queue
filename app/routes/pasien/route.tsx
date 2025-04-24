@@ -39,7 +39,7 @@ export async function action({ request }: ActionFunctionArgs) {
       department: department as Department,
     });
 
-    return redirect(`/patient/status?ticket=${queueItem.ticketNumber}`);
+    return redirect(`/pasien/status?ticket=${queueItem.ticketNumber}`);
   } catch (error) {
     console.error(error, "ERRR");
     return json(

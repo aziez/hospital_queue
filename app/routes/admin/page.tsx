@@ -33,7 +33,7 @@ export default function Page() {
           <h2 className="text-xl font-semibold">Menu Navigasi</h2>
           <div className="mt-4 space-y-2">
             <Link
-              to="/patient/check-in"
+              to="/pasien/check-in"
               className="block p-2 bg-blue-100 hover:bg-blue-200 rounded"
             >
               Check-in Pasien Baru
