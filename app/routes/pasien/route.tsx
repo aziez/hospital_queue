@@ -34,12 +34,12 @@ export async function action({ request }: ActionFunctionArgs) {
     }
 
     // Buat antrian baru
-    const queueItem = await createQueueItem({
-      patientId: patient.id,
-      department: department as Department,
-    });
+    // const queueItem = await createQueueItem({
+    //   patientId: patient.id,
+    //   department: department as Department,
+    // });
 
-    return redirect(`/pasien/status?ticket=${queueItem.ticketNumber}`);
+    return redirect(`/display`);
   } catch (error) {
     console.error(error, "ERRR");
     return json(
